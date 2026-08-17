@@ -1,0 +1,36 @@
+{
+  "_comment": "PLACEHOLDER CONTENT. These are not real reviews and no real person is named. Replace each entry with a genuine review before launch (Sky View has 200+ on Google Business). Keep the same field names and the carousel will pick them up automatically. Delete an entry to remove it; empty the array to hide the whole section.",
+  "_status": "placeholder",
+  "reviews": [
+    {
+      "heading": "Found exactly what we needed",
+      "quote": "Placeholder — replace with a genuine client review. The buying process felt simple and clear, and the advisor showed us options that actually matched our brief.",
+      "author": "Verified buyer",
+      "location": "Business Bay"
+    },
+    {
+      "heading": "The right home, without the stress",
+      "quote": "Placeholder — replace with a genuine client review. Well organised from the first viewing through to the DLD transfer, with support at every step.",
+      "author": "Verified buyer",
+      "location": "Dubai Hills Estate"
+    },
+    {
+      "heading": "A smooth off-plan purchase",
+      "quote": "Placeholder — replace with a genuine client review. The team explained the payment plan in detail and made sure everything was understood before committing.",
+      "author": "Verified buyer",
+      "location": "DAMAC Islands"
+    },
+    {
+      "heading": "Straight answers on yield",
+      "quote": "Placeholder — replace with a genuine client review. As an overseas investor I needed clarity on service charges, yields and handover risk.",
+      "author": "Verified investor",
+      "location": "Jumeirah Village Circle"
+    },
+    {
+      "heading": "Property management that works",
+      "quote": "Placeholder — replace with a genuine client review. Tenant screening, renewals and maintenance handled, with rent arriving on time.",
+      "author": "Verified landlord",
+      "location": "Al Barsha"
+    }
+  ]
+}
