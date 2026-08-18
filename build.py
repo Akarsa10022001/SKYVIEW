@@ -19,6 +19,17 @@ import shutil
 ROOT = os.path.dirname(os.path.abspath(__file__))
 OUT = ROOT
 
+
+def asset_hash(filename):
+    """Short content hash appended to css/js URLs so a deploy never serves a
+    stale stylesheet from cache."""
+    import hashlib
+    path = os.path.join(ROOT, filename)
+    if not os.path.exists(path):
+        return "0"
+    with open(path, "rb") as fh:
+        return hashlib.sha256(fh.read()).hexdigest()[:8]
+
 # ============================================================================
 # CONFIG — edit these, rebuild, done.
 # ============================================================================
@@ -527,7 +538,7 @@ def head(title, desc, depth=0, og_img="assets/dubai5.jpg"):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Host+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{r}styles.css">
+<link rel="stylesheet" href="{r}styles.css?v={asset_hash('styles.css')}">
 {analytics(depth)}</head>
 <body{' data-form-endpoint="' + CONFIG['form_endpoint'] + '"' if CONFIG['form_endpoint'] else ''} data-wa="{CONFIG['whatsapp']}">
 """
@@ -626,7 +637,7 @@ def footer(depth=0):
 
 <a class="wa" href="{WA_BASE}" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">{icon('wa', 27)}</a>
 
-<script src="{r}script.js"></script>
+<script src="{r}script.js?v={asset_hash('script.js')}"></script>
 </body>
 </html>
 """
@@ -743,7 +754,7 @@ def build_home():
       <article class="member reveal">
         <div class="member__img"><img src="{img}" alt="{n}" loading="lazy"></div>
         <h3>{n}</h3><p>{role}</p>
-      </article>""" for n, role, img in LEADERSHIP[1:5])
+      </article>""" for n, role, img in LEADERSHIP[2:5])  # [1] is rendered as the lead card above
 
     vid = CONFIG["showreel_video"]
 
